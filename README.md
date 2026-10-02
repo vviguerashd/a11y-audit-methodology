@@ -27,6 +27,29 @@ The methodology is structured in three audit levels depending on the depth requi
 
 ---
 
+## Process at a glance
+
+```mermaid
+flowchart TD
+    A["1. Scope<br/>What to audit, target standard, constraints<br/>→ choose level L1 / L2 / L3"] --> B["2a. First pass<br/>Visual review + DevTools"]
+    B --> C["2b. Manual checklist<br/>Yes/no questions mapped to WCAG"]
+    C --> D["2c. Automated tools<br/>WAVE → Lighthouse → axe (L2+)"]
+    D --> E{"Do results match<br/>my notes?"}
+    E -- "No" --> F["Investigate the disagreement"]
+    F --> G{"Audit level?"}
+    E -- "Yes" --> G
+    G -- "L2 / L3" --> H["2d. Keyboard navigation"]
+    H --> I{"L3?"}
+    I -- "Yes" --> J["2e. Screen reader<br/>NVDA / VoiceOver"]
+    I -- "No" --> K
+    J --> K["3. Document findings<br/>Criterion, severity, impact, fix"]
+    G -- "L1" --> K
+    K --> L["Prioritize<br/>Level A → HTML/CSS fixes → Level AA → JS fixes"]
+    L --> M["Report"]
+```
+
+---
+
 ## My Process
 
 ### 1. Scope

@@ -27,6 +27,29 @@ La metodología está estructurada en tres niveles de auditoría según la profu
 
 ---
 
+## El proceso de un vistazo
+
+```mermaid
+flowchart TD
+    A["1. Alcance<br/>Qué auditar, estándar objetivo, restricciones<br/>→ elegir nivel N1 / N2 / N3"] --> B["2a. Primera revisión<br/>Revisión visual + DevTools"]
+    B --> C["2b. Checklist manual<br/>Preguntas de sí/no mapeadas a WCAG"]
+    C --> D["2c. Herramientas automáticas<br/>WAVE → Lighthouse → axe (N2+)"]
+    D --> E{"¿Los resultados coinciden<br/>con mis notas?"}
+    E -- "No" --> F["Investigar el desacuerdo"]
+    F --> G{"¿Nivel de auditoría?"}
+    E -- "Sí" --> G
+    G -- "N2 / N3" --> H["2d. Navegación con teclado"]
+    H --> I{"¿N3?"}
+    I -- "Sí" --> J["2e. Lector de pantalla<br/>NVDA / VoiceOver"]
+    I -- "No" --> K
+    J --> K["3. Documentar hallazgos<br/>Criterio, severidad, impacto, corrección"]
+    G -- "N1" --> K
+    K --> L["Priorizar<br/>Nivel A → correcciones HTML/CSS → Nivel AA → correcciones JS"]
+    L --> M["Reporte"]
+```
+
+---
+
 ## Mi proceso
 
 ### 1. Alcance
