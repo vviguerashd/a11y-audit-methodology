@@ -1,7 +1,7 @@
 # VHVD: Metodología Personal de Auditoría de Accesibilidad Web
 
 > Una metodología personal de auditoría de accesibilidad web en tres niveles, basada en WCAG 2.1 AA, Section 508 y EN 301 549.
-> Construida desde la práctica real de auditoría, no solo desde el estudio teórico.
+> Construida y refinada con auditorías prácticas de mis propios proyectos, no solo desde el estudio teórico.
 
 ---
 
@@ -17,13 +17,13 @@ La metodología está estructurada en tres niveles de auditoría según la profu
 
 | Nivel | Nombre | Herramientas | Cobertura WCAG | Alineación legal |
 |-------|--------|--------------|----------------|------------------|
-| **N1** | Revisión rápida | WAVE + Lighthouse + revisión manual | Nivel A (issues de alto impacto) | — |
+| **N1** | Revisión rápida | WAVE + Lighthouse + revisión manual | Solo issues de alto impacto (no confirma conformidad) | — |
 | **N2** | Auditoría estándar | WAVE + axe DevTools + navegación con teclado + Chrome DevTools | WCAG 2.1 AA | Section 508 (EE.UU.) · EN 301 549 (UE) |
 | **N3** | Auditoría completa | Todo lo anterior + lector de pantalla (VoiceOver / NVDA) | WCAG 2.1 AA (cobertura completa) | Section 508 (EE.UU.) · EN 301 549 (UE) |
 
-> **Sobre la alineación legal:** Tanto Section 508 (EE.UU.) como EN 301 549 (UE) referencian WCAG 2.1 AA como su base técnica. Auditar contra WCAG 2.1 AA produce evidencia directamente alineada con los requisitos técnicos de ambos estándares. Esto no es una certificación legal. Significa que los hallazgos están expresados en términos que esos marcos reconocen y sobre los que pueden actuar.
+> **Sobre la alineación legal:** EN 301 549 (v3.2.1) referencia WCAG 2.1 AA, mientras que Section 508 referencia WCAG 2.0 AA (actualización de 2017). Como WCAG 2.1 AA incluye todos los criterios de WCAG 2.0 AA, auditar contra WCAG 2.1 AA cubre los requisitos web basados en WCAG de ambos estándares. Los dos incluyen además requisitos que van más allá de WCAG (por ejemplo, para software, documentos y documentación de soporte) que una auditoría web no cubre. Esto no es una certificación legal. Significa que los hallazgos están expresados en términos que esos marcos reconocen y sobre los que pueden actuar.
 
-> **N2 vs N3:** La diferencia es la profundidad de cobertura con lector de pantalla. N2 cubre la mayoría de los criterios de WCAG 2.1 AA. N3 agrega pruebas manuales con lector de pantalla (VoiceOver / NVDA), necesarias para verificar criterios que las herramientas automáticas no pueden evaluar completamente, especialmente regiones dinámicas, contenido actualizado en tiempo real y patrones ARIA complejos.
+> **N2 vs N3:** La diferencia es la profundidad de cobertura con lector de pantalla. N2 evalúa la mayoría de los criterios de WCAG 2.1 AA con herramientas automáticas y pruebas de teclado, pero algunos criterios solo se pueden confirmar con tecnología asistiva. N3 agrega pruebas manuales con lector de pantalla (VoiceOver / NVDA), necesarias para verificar criterios que las herramientas automáticas no pueden evaluar completamente, especialmente regiones dinámicas, contenido actualizado en tiempo real y patrones ARIA complejos.
 
 ---
 
@@ -158,7 +158,7 @@ La plantilla `.xlsx` en este repositorio refleja directamente este proceso. Incl
 |----------|-------------|-------|
 | [**WCAG 2.1 AA**](https://www.w3.org/TR/WCAG21/) | Base global | Fundamento de los tres niveles de auditoría |
 | [**Section 508**](https://www.section508.gov/) | Estados Unidos | ICT federal; referencia WCAG 2.0 AA desde la actualización de 2017 |
-| [**EN 301 549**](https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf) | Unión Europea | Referencia WCAG 2.1 AA; extendido al sector privado mediante la Ley Europea de Accesibilidad (2025) |
+| [**EN 301 549**](https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf) | Unión Europea | Referencia WCAG 2.1 AA; norma armonizada para el sector público bajo la Directiva de Accesibilidad Web, y principal referencia técnica de la Ley Europea de Accesibilidad (aplica desde junio de 2025) |
 
 ---
 

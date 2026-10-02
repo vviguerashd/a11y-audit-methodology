@@ -1,7 +1,7 @@
 # VHVD: WCAG Accessibility Audit Methodology
 
 > A personal, three-level web accessibility audit methodology based on WCAG 2.1 AA, Section 508, and EN 301 549.
-> Built from real audit practice, not just coursework.
+> Built and refined through hands-on audits of my own projects, not just coursework.
 
 ---
 
@@ -17,13 +17,13 @@ The methodology is structured in three audit levels depending on the depth requi
 
 | Level | Name | Tools | WCAG Coverage | Legal Alignment |
 |-------|------|-------|---------------|-----------------|
-| **L1** | Quick Scan | WAVE + Lighthouse + manual review | Level A (high-impact issues) | — |
+| **L1** | Quick Scan | WAVE + Lighthouse + manual review | High-impact issues only (does not confirm conformance) | — |
 | **L2** | Standard Audit | WAVE + axe DevTools + keyboard nav + Chrome DevTools | WCAG 2.1 AA | Section 508 (US) · EN 301 549 (EU) |
 | **L3** | Full Audit | All of the above + screen reader (VoiceOver / NVDA) | WCAG 2.1 AA (full coverage) | Section 508 (US) · EN 301 549 (EU) |
 
-> **On legal alignment:** Both Section 508 (US) and EN 301 549 (EU) reference WCAG 2.1 AA as their technical foundation. Auditing against WCAG 2.1 AA produces evidence directly aligned with the technical requirements of both standards. This is not a legal certification. It means the audit findings are expressed in terms those frameworks recognize and can act on.
+> **On legal alignment:** EN 301 549 (v3.2.1) references WCAG 2.1 AA, while Section 508 references WCAG 2.0 AA (2017 refresh). Because WCAG 2.1 AA includes every WCAG 2.0 AA success criterion, auditing against WCAG 2.1 AA covers the WCAG-based web requirements of both standards. Both also contain requirements beyond WCAG (for example, for software, documents, and support documentation) that a web audit does not cover. This is not a legal certification. It means the audit findings are expressed in terms those frameworks recognize and can act on.
 
-> **L2 vs L3:** The difference is depth of screen reader coverage. L2 covers the majority of WCAG 2.1 AA criteria. L3 adds manual screen reader testing (VoiceOver / NVDA), which is required to verify criteria that automated tools cannot fully assess, particularly around live regions, dynamic content, and complex ARIA patterns.
+> **L2 vs L3:** The difference is depth of screen reader coverage. L2 tests most WCAG 2.1 AA criteria with automated tools and keyboard checks, but some criteria can only be confirmed with assistive technology. L3 adds manual screen reader testing (VoiceOver / NVDA), which is required to verify criteria that automated tools cannot fully assess, particularly around live regions, dynamic content, and complex ARIA patterns.
 
 ---
 
@@ -158,7 +158,7 @@ The `.xlsx` template in this repo reflects this process directly. It includes:
 |----------|-------------|-------|
 | [**WCAG 2.1 AA**](https://www.w3.org/TR/WCAG21/) | Global baseline | Foundation for all three audit levels |
 | [**Section 508**](https://www.section508.gov/)| United States | Federal ICT; references WCAG 2.0 AA since 2017 refresh |
-| [**EN 301 549**](https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf)| European Union | References WCAG 2.1 AA; extended to private sector via European Accessibility Act (2025) |
+| [**EN 301 549**](https://www.etsi.org/deliver/etsi_en/301500_302000/301549/03.02.01_60/en_301549v030201p.pdf)| European Union | References WCAG 2.1 AA; harmonised standard for the public sector under the Web Accessibility Directive, and the main technical reference for the European Accessibility Act (applies from June 2025) |
 
 ---
 

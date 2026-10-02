@@ -17,10 +17,11 @@
 ### 1.3.1 — Información y relaciones (Nivel A)
 - [ ] ¿Hay divitis? *(elementos `div` o `span` donde debería haber semántica)*
 - [ ] ¿Se usan elementos semánticos de HTML? *(nav, main, header, footer, section, article)*
-- [ ] ¿Hay más de un `h1` en la página?
-- [ ] ¿Los headings están en orden descendente sin saltar niveles? *(h1 → h2 → h3…)*
+- [ ] ¿Los headings reflejan la estructura visual del contenido? *(un texto que se ve como heading debe estar marcado como heading)*
+- [ ] ¿Hay más de un `h1` o se saltan niveles de heading? *(buena práctica, no es una falla de 1.3.1 por sí sola)*
 - [ ] ¿Las listas están dentro de `ol` o `ul`?
 - [ ] ¿Los labels de los formularios tienen suficiente información para entender qué se pide?
+- [ ] ¿Los mensajes de error están asociados programáticamente a su campo? *(ej. `aria-describedby`)*
 
 ### 1.4.1 — Uso del color (Nivel A)
 - [ ] ¿Se usa solo el color para indicar un error o campo requerido?
@@ -46,16 +47,16 @@
 - [ ] ¿Puedo acceder a todos los elementos accionables con Tab? *(links, botones, inputs, selects, checkboxes, radio buttons)*
 - [ ] ¿Hay algún elemento donde el foco queda atrapado y no puedo salir con teclado?
 - [ ] ¿Los menús desplegables abren y cierran con teclado?
-- [ ] ¿Al cerrar un menú o modal el foco regresa al elemento que lo abrió?
-- [ ] ¿El foco entra al primer elemento de un menú desplegable al abrirse?
 
 ### 2.4.1 — Evitar bloques (Nivel A)
-- [ ] ¿Hay un skip link visible al primer Tab que lleva al contenido principal?
-- [ ] ¿El skip link funciona — o sea, realmente mueve el foco al contenido principal?
+- [ ] ¿Hay alguna forma de saltar bloques de contenido repetido? *(skip link, landmarks o headings)*
+- [ ] ¿Si hay skip link, aparece al recibir foco y realmente mueve el foco al contenido principal?
 
 ### 2.4.3 — Orden del foco (Nivel A)
 - [ ] ¿El orden del Tab sigue una secuencia lógica de lectura? *(izquierda a derecha, arriba a abajo)*
 - [ ] ¿Hay algún salto inesperado en el orden de foco que pueda desorientar al usuario?
+- [ ] ¿Hay algún `tabindex` positivo (1 o mayor) que fuerce un orden artificial?
+- [ ] ¿Al abrir un modal el foco entra en él? ¿Al cerrarlo, el foco regresa al elemento que lo abrió?
 
 ### 2.4.4 — Propósito de los links (Nivel A)
 - [ ] ¿El texto del link describe su propósito por sí solo?
@@ -86,8 +87,7 @@
 
 ### 3.3.3 — Sugerencia de error (Nivel AA)
 - [ ] ¿El mensaje de error explica cómo corregir el problema — no solo que existe?
-- [ ] ¿Se usan `aria-describedby` o `aria-live` para anunciar los errores al lector de pantalla?
-- [ ] ¿El error aparece cerca del campo que lo generó, no solo al inicio del formulario?
+- [ ] ¿El error aparece cerca del campo que lo generó, no solo al inicio del formulario? *(buena práctica)*
 
 ---
 

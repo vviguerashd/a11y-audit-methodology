@@ -17,10 +17,11 @@
 ### 1.3.1 — Info and Relationships (Level A)
 - [ ] Is there div soup? (div or span elements used where semantic HTML should be)
 - [ ] Are semantic HTML elements used? (nav, main, header, footer, section, article)
-- [ ] Is there more than one `h1` on the page?
-- [ ] Are headings in descending order without skipping levels? (h1 → h2 → h3...)
+- [ ] Do headings reflect the visual structure of the content? (Text that looks like a heading should be marked up as one)
+- [ ] Is there more than one `h1`, or are heading levels skipped? *(Best practice, not a 1.3.1 failure on its own)*
 - [ ] Are lists wrapped in `ol` or `ul`?
 - [ ] Do form labels provide enough information to understand what is being asked?
+- [ ] Are error messages programmatically associated with their field? (e.g. `aria-describedby`)
 
 ### 1.4.1 — Use of Color (Level A)
 - [ ] Is color the only means used to indicate an error or required field?
@@ -46,16 +47,16 @@
 - [ ] Can I reach all actionable elements with Tab? (links, buttons, inputs, selects, checkboxes, radio buttons)
 - [ ] Is there any element where focus gets trapped and I cannot exit with the keyboard?
 - [ ] Do dropdown menus open and close with the keyboard?
-- [ ] When a menu or modal is closed, does focus return to the element that opened it?
-- [ ] When a dropdown opens, does focus move to the first item inside it?
 
 ### 2.4.1 — Bypass Blocks (Level A)
-- [ ] Is there a visible skip link on the first Tab that leads to the main content?
-- [ ] Does the skip link actually work? (Does it move focus to the main content?)
+- [ ] Is there a way to bypass repeated blocks of content? (skip link, landmarks, or headings)
+- [ ] If there is a skip link, does it appear on focus and actually move focus to the main content?
 
 ### 2.4.3 — Focus Order (Level A)
 - [ ] Does the Tab order follow a logical reading sequence? (left to right, top to bottom)
 - [ ] Are there any unexpected jumps in focus order that could disorient the user?
+- [ ] Is there any positive `tabindex` (1 or higher) forcing an artificial order?
+- [ ] When a modal opens, does focus move into it? When it closes, does focus return to the element that opened it?
 
 ### 2.4.4 — Link Purpose (Level A)
 - [ ] Does the link text describe its purpose on its own?
@@ -86,8 +87,7 @@
 
 ### 3.3.3 — Error Suggestion (Level AA)
 - [ ] Does the error message explain how to fix the problem, not just that one exists?
-- [ ] Are `aria-describedby` or `aria-live` used to announce errors to the screen reader?
-- [ ] Does the error appear near the field that caused it, not just at the top of the form?
+- [ ] Does the error appear near the field that caused it, not just at the top of the form? *(Best practice)*
 
 ---
 
